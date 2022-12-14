@@ -9,11 +9,9 @@ using Random = UnityEngine.Random;
 public class GameSistem : MonoBehaviour,IPointerDownHandler
 {
     public static GameSistem instance;
-    
     [SerializeField] private List<String> _boost;
     [SerializeField] private SpawnGameObgect _spawnGameObgect;
     [SerializeField] private GameObject _panel;
-
     private List<GameObject> _bots = new List<GameObject>(), _players = new List<GameObject>();
     private List<Transform> _items;
 
@@ -29,7 +27,6 @@ public class GameSistem : MonoBehaviour,IPointerDownHandler
         {
             Click();
         }
-        
         if (Input.GetKeyDown(KeyCode.R))
         {
            SceneManager.LoadScene("SampleScene");
@@ -86,7 +83,6 @@ public class GameSistem : MonoBehaviour,IPointerDownHandler
                 player.Add(_players[i]);
             }
         }
-
         if (botKill == _bots.Count)
         {
             _panel.SetActive(true);
@@ -97,19 +93,16 @@ public class GameSistem : MonoBehaviour,IPointerDownHandler
             _panel.SetActive(true);
             _panel.GetComponentInChildren<TextMeshProUGUI>().text = "Вы проиграли!";
         }
-
         if (playerKill>0)
         {
             _players = player;
             _items = items;
         }
-
         if (botKill>0)
         {
             _bots.Clear();  
             _bots = bot;
         }
-        
     }
     void Click()
     {
@@ -144,7 +137,6 @@ public class GameSistem : MonoBehaviour,IPointerDownHandler
                 playerDate.ClosedPoison();
                 playerDate.PoisonClose = false;
             }
-
             if (playerDate.DefActive)
             {
                 playerDate.CloseDef++;

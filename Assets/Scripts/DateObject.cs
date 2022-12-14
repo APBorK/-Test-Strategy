@@ -4,12 +4,10 @@ using UnityEngine.UI;
 
 public class DateObject : MonoBehaviour
 {
-    
     [SerializeField] private Slider _sliderHP, _sliderDef;
     [SerializeField] private TextMeshProUGUI _textHP, _textDef;
     [SerializeField] private float _maxDef,_maxHP;
     [SerializeField] private GameObject _poison;
-    
     [HideInInspector]
     public bool PoisonClose,DefActive;
     [HideInInspector]
@@ -69,7 +67,6 @@ public class DateObject : MonoBehaviour
 
     public void Damage(float damage = 3)
     {
-        
         if (_sliderDef.gameObject.activeSelf)
         {
             _sliderDef.value -= damage;
@@ -89,7 +86,6 @@ public class DateObject : MonoBehaviour
                 GameSistem.instance.EndGames();
             }
         }
-        
     }
 
     public void Poison()

@@ -38,10 +38,7 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IPointerDownHandler,
     {
         _tap = false;
     }
-
-
-
-
+    
     public void OnDrag(PointerEventData eventData)
     {
         var cursor = Camera.main.ScreenToWorldPoint(Input.mousePosition);
